@@ -4,9 +4,9 @@
 # MaizeChipPy 1.0 - JJM - May 2017
 
 
-from fpga_Class_2 import *
-from tests_2 import *
-from treatments_2 import *
+from fpgaClass import *
+from tests import *
+from treatments import *
 from patterns import *
 
 x = FPGA()
