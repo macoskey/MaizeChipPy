@@ -7,11 +7,14 @@
 from fpgaClass import *
 from tests import *
 from treatments import *
+from pointUploader import *
 from patterns import *
 
 x = FPGA()
 a = a_funcs(x)
 b = b_funcs(x)
+
+ul = point_uploader(b)
 
 
 		
