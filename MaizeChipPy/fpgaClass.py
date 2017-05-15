@@ -4,8 +4,6 @@
 # MaizeChip 1.0 Feb 2014 TLH
 # MaizeChipPy 1.0 May 2017 JJM
 
-
-import time
 import serial
 import settings
 import numpy as np
