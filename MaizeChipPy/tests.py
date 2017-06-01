@@ -9,6 +9,7 @@ import time
 
 from fpga_Class import *
 
+
 # Test for communications: flashes each LED according to its number\
 # wt = wait time in clock cycles. Normal number is 20e6
 def LEDflashtest(x,wt):

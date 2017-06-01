@@ -74,11 +74,10 @@ def basic112_upload(a,b,locations):
 	# Program motherboards
 	nLocs = locations.shape[0]
 	moboProgram(a,b,phasecals,nLocs)
-		
 	
 def basic112_steering(a,b,PRF,nPulses,locations):
 	# Parameters:
-	trig_len = 10e-6
+	trig_len = 20e-6
 	
 	#### SETUP ####
 	b.stop_execution()
@@ -101,12 +100,13 @@ def basic112_steering(a,b,PRF,nPulses,locations):
 	
 	#** begin inner loop
 	a.start_loop(2,nLocs)
-
-	a.fire(0)
-	a.set_trig(15)
-	a.waitsec(trig_len)
+	
 	a.set_trig(0)
-
+	a.waitsec(trig_len)
+	a.set_trig(15)
+	
+	a.fire(0)
+	
 	a.waitsec(float(1)/(PRF)-trig_len)
 	
 	a.loadincr_chipmem(0,1)
@@ -123,3 +123,14 @@ def basic112_steering(a,b,PRF,nPulses,locations):
 	a.halt()
 	
 	print "Array initialized. Waiting to fire at %d locations...\n" %nLocs
+
+
+def twoLoc112_upload(a,b):
+	loc1 = np.array([5,0,0])
+	loc2 = np.array([-5,0,0])
+	
+	phasecal1 = steeringChargetimes(loc1)
+	phasecal2 = steeringChargetimes(loc2)
+	
+	return phasecal1, phasecal2
+	
