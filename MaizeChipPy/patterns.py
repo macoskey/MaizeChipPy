@@ -8,6 +8,10 @@ def makeCenter():
 	pattern = np.array([[0,0,0],[0,0,0]])
 	return pattern
 
+def make2Points(p1,p2):
+	pattern = np.array([[0,p1,0],[0,p2,0]])
+	return pattern
+
 def make4Points():
 	pattern = np.array([[5,0,0],[0,5,0],[-5,0,0],[0,-5,0]])
 	return pattern

@@ -25,7 +25,7 @@ class FPGA(object):
 		if len(ports) == 1:
 			self.ser = serial.Serial(ports[0])
 			print 'driving system communications initialized\n'
-		else:
+		if len(ports) > 1:
 			print 'more than one USB device is connected. '
 			try:
 				serNum = input("Input correct com number: ")
@@ -34,7 +34,9 @@ class FPGA(object):
 				self.ser.reset_output_buffer()
 				print 'driving system communications initialized\n'
 			except:
-				print 'port number invalid'		
+				print 'port number invalid'	
+		if len(ports) == 0:
+			print "something is fucked"
 
 		
 
