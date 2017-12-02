@@ -103,6 +103,7 @@ def basic112_steering(x,PRF,nPulses,locations):
 	x.a_start_loop(2,nLocs)
 
 	x.a_fire(0)
+	
 	x.a_set_trig(15)
 	x.a_waitsec(trig_len)
 	x.a_set_trig(0)

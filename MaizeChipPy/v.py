@@ -8,6 +8,7 @@ from fpga_Class_2 import *
 from tests_2 import *
 from treatments_2 import *
 from patterns import *
+from AbCorr_tests import *
 
 x = FPGA()
 a = a_funcs(x)
